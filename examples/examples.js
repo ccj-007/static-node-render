@@ -3,8 +3,9 @@ const collections = require('@metalsmith/collections')
 const layouts = require('@metalsmith/layouts')
 const markdown = require('@metalsmith/markdown')
 const permalinks = require('@metalsmith/permalinks')
-
-Metalsmith(__dirname)         // __dirname defined by node.js:
+const path = require('path')
+const dirPath = path.resolve(process.cwd(), '..')
+Metalsmith(dirPath)         // __dirname defined by node.js:
   // name of the directory of this file
   .metadata({                 // add any variable you want
     // use them in layout-files
@@ -24,7 +25,8 @@ Metalsmith(__dirname)         // __dirname defined by node.js:
   .use(permalinks({           // change URLs to permalink URLs
     relative: false           // put css only in /css
   }))
-  .use(layouts())             // wrap layouts around html
+  .use(layouts({
+  }))             // wrap layouts around html
   .build(function (err) {      // do something when the build finishes
     if (err) throw err;       // error handling is required
   });

@@ -15,7 +15,9 @@
     "@metalsmith/layouts": "^2.6.0",
     "@metalsmith/markdown": "^1.6.0",
     "@metalsmith/permalinks": "^2.4.1",
+    "handlebars": "^4.7.7",
     "metalsmith": "^2.5.1",
-    "metalsmith-writemetadata": "^0.4.5"
+    "metalsmith-writemetadata": "^0.4.5",
+    "rimraf": "^3.0.2"
   }
 }
